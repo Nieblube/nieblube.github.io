@@ -1,5 +1,10 @@
 body{
     margin: 0;
     background: pink;
-    text-align: center;
+    text-align: left;
+}
+p{
+    font-weight: bold;
+    color: rgb(18, 136, 175);
+
 }
