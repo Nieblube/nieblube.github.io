@@ -1,9 +1,13 @@
 body{
+    width: 100%;
+    height: 100%;
     margin: 0;
     background: pink;
     text-align: center;
 }
 p{
+    margin-top:3cm;
+    margin-bottom:3cm;
     font-weight: bold;
     color: rgb(18, 136, 175);
 
