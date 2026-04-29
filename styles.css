@@ -54,11 +54,12 @@ p.stickLetters{
 
 p.buttonsText{
     color: #f6dd7a;
-    font-size: 120%;
-    font-weight: bold;
-    margin-top: 18px;
-    margin-bottom: 10px;
-    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 165%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    letter-spacing: 0px;
+    font-variant: small-caps;
+    font-family: Consolas,"Liberation Mono","Courier New",monospace;
 }
 
 a:link {
@@ -68,7 +69,7 @@ a:link {
 }
 
 a:visited {
-  color: #857431;
+  color: #52471d;
   background-color: transparent;
   text-decoration: none;
 }
