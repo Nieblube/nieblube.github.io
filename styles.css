@@ -7,11 +7,21 @@ body{
 }
 
 p.base{
+    font-size: 100%;
     font-weight: bold;
     color: #e27db3;
     margin-top: 0px;
     margin-bottom: 0px;
     letter-spacing: 8px;
+}
+
+p.decorMargin{
+    font-size: 60%;
+    font-weight: bold;
+    color: #e27db3;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    letter-spacing: 6px;
 }
 
 p.esp{
@@ -24,7 +34,7 @@ p.esp{
     text-shadow: 0 0 5px pink;
 }
 
-p.slant{
+p.slantRelief{
     line-height: 16px; 
     display:block;
     font-family: "Lucida Console", Monaco, monospace;
@@ -33,19 +43,45 @@ p.slant{
     text-shadow: 0 0 5px #FFFFFF;
     }
 
-p.stick{
+p.stickLetters{
     white-space: pre;
-    line-height: 6px; 
+    line-height: 6.2px; 
     display:block;
     font-family: "Lucida Console", Monaco, monospace;
     letter-spacing: -3px;
     color: #f6dd7a;
     }
 
-p.stickWhite{
-    line-height: 13px; 
-    display:block;
+p.buttonsText{
+    color: #f6dd7a;
+    font-size: 120%;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 10px;
     font-family: "Lucida Console", Monaco, monospace;
-    letter-spacing: -3px;
-    color: #f9f9f9;
-    }
+}
+
+a:link {
+  color: #f6dd7a;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #857431;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #f6dd7a;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
