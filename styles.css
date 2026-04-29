@@ -8,16 +8,18 @@ body{
 
 p.base{
     font-weight: bold;
-    color: pink;
+    color: #e27db3;
+    margin-top: 0px;
+    margin-bottom: 0px;
     letter-spacing: 8px;
 }
 
 p.esp{
-    font-size: 300%;
-    margin-top:48px;
-    margin-bottom:48px;
+    font-size: 250%;
+    margin-top: 36px;
+    margin-bottom: 36px;
     letter-spacing: -6px;
-    color: pink;
+    color: #f6dd7a;
     font-weight: bold;
     text-shadow: 0 0 5px pink;
 }
@@ -27,16 +29,23 @@ p.slant{
     display:block;
     font-family: "Lucida Console", Monaco, monospace;
     letter-spacing: -0.2px;
-    color: white;
+    color: #e27db3;
     text-shadow: 0 0 5px #FFFFFF;
     }
 
 p.stick{
     white-space: pre;
-    line-height: 8px; 
+    line-height: 6px; 
     display:block;
     font-family: "Lucida Console", Monaco, monospace;
-    letter-spacing: -0.2px;
-    color: white;
-    text-shadow: 0 0 5px #FFFFFF;
+    letter-spacing: -3px;
+    color: #f6dd7a;
+    }
+
+p.stickWhite{
+    line-height: 13px; 
+    display:block;
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: -3px;
+    color: #f9f9f9;
     }
