@@ -62,27 +62,7 @@ p.buttonsText{
     font-family: Consolas,"Liberation Mono","Courier New",monospace;
 }
 
-a:link {
-  color: #f6dd7a;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #52471d;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: #f6dd7a;
-  background-color: transparent;
-  text-decoration: underline;
-}
-</style>
+a:link { color: #f6dd7a; background-color: transparent; text-decoration: none;}
+a:visited { color: #b9a75d; background-color: transparent; text-decoration: none;}
+a:hover { color: white; background-color: transparent; text-decoration: underline;}
+a:active { color: #f6dd7a; background-color: transparent; text-decoration: underline;}
