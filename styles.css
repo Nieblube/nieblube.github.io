@@ -15,7 +15,7 @@ p.base{
     letter-spacing: 8px;
 }
 
-p.decorMargin{
+p.decorMarginNOUSAR{
     font-size: 100%;
     font-weight: bold;
     color: #e27db3;
@@ -50,7 +50,8 @@ p.stickLetters{
     letter-spacing: -3px;
     color: #f6dd7a;
     }
-p.decorMargin2{
+    
+p.decorMargin{
     font-size: 75%;
     white-space: pre;
     line-height: 0px; 
