@@ -66,3 +66,73 @@ a:link { color: #f6dd7a; background-color: transparent; text-decoration: none;}
 a:visited { color: #b9a75d; background-color: transparent; text-decoration: none;}
 a:hover { color: white; background-color: transparent; text-decoration: underline;}
 a:active { color: #f6dd7a; background-color: transparent; text-decoration: underline;}
+
+
+
+.popup-container {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-info {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Position below the image */
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  z-index: 10;
+}
+
+
+
+button{
+  font-size: 24px;
+  width: 240px;
+  height: 240px;
+  border-color: #f6dd7a;
+  border-radius: 120px;
+  color: #f6dd7a;
+  background-color: transparent;
+
+}
+
+
+
+
+
+
+ #gallery {
+    width: 600px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin: 100px auto;
+    border: 2px solid #003C72;
+  }
+  #navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+  }
+  #navigation li {
+    padding: 0;
+    margin: 0;
+    float: left;
+    clear: both;
+  }
+  #navigation li a img {
+    display: block;
+    border: none;
+  }
+  #navigation li a {
+    display: block;
+  }
+  #full-picture {
+    width: 500px;
+    height: 375px;
+    overflow: hidden;
+    float: left;
+  }

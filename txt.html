@@ -1,0 +1,351 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nubecita | Virtual Memory</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Sitio Web personal">
+    <meta name="keywords" content="Biografia, Registro, Diario">
+    <meta name="author" content="Emilia Paz P.O.">
+</head>
+
+
+<body>
+    <a href="index.html">/back\<br>\home/</a>
+    <p class="decorMargin">/////////////////////////////////////////////////////////////////////////////≽^-⩊-^≼/////////////////////////////////////////////////////////////////////////////
+    </p>
+    <hr style="height:2px; visibility:hidden;"/>
+
+
+    <p class="stickLetters">
+      ___ ___  __        __      __   __        __       ___  ___            __        __  <br>
+|    |__   |  |__)  /\  /__`    /  ` /  \ |\ | /  `  /\   |  |__  |\ |  /\  |  \  /\  /__` <br>
+|___ |___  |  |  \ /~~\ .__/    \__, \__/ | \| \__, /~~\  |  |___ | \| /~~\ |__/ /~~\ .__/ </p>
+
+    <hr style="height:22px; visibility:hidden;"/>
+    <p class="decorMargin">/////////////////////////////////////////////////////////////////////////////≽^-⩊-^≼/////////////////////////////////////////////////////////////////////////////
+    </p>
+    <br>
+
+
+<style>
+    /* 1. GRID PRINCIPAL (Pantalla completa) */
+    .contenedor-principal {
+      display: grid;
+      /* AJUSTE DE ANCHO: Modifica estos valores para cambiar el tamaño de cada sección */
+      grid-template-columns: 40% 60%; 
+      height: 100vh;
+    }
+
+    /* Sección Izquierda */
+    .seccion-izquierda {
+      background-color: transparent;
+      padding: 5px;
+      border-right: 2px solid #f6dd7a;
+    }
+
+    /* 2. SUB-GRID DE BOTONES (Dentro de la sección izquierda) */
+    .grid-botones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+      gap: 12px; /* Espacio entre botones */
+    }
+
+    .btn-capitulo {
+      padding: 15px 10px;
+      font-size: 24px;
+      background-color: transparent;
+      color: #f6dd7a;
+      border:#f6dd7a;
+      border-radius: 150px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .btn-capitulo:hover {
+      background-color: #e27db3;
+    }
+
+    /* Sección Derecha (Texto de la historia) */
+    .seccion-derecha {
+      padding: 40px;
+      background-color: transparent;
+      overflow-y: auto; /* Permite scroll si el texto es muy largo */
+    }
+
+    .titulo-historia {
+      font-size: 28px;
+      color: whitesmoke;
+      margin-bottom: 20px;
+    }
+
+    .texto-historia {
+      font-size: 18px;
+      line-height: 1.6;
+      color: whitesmoke;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    
+    <!-- LADO IZQUIERDO: Panel de Control -->
+    <div class="seccion-izquierda">
+      <div class="grid-botones">
+        <!-- El atributo 'data-cap' vincula el botón con su respectivo texto -->
+        <button class="btn-capitulo" data-cap="1">Sincronicidad</button>
+        <button class="btn-capitulo" data-cap="2">Dice</button>
+        <button class="btn-capitulo" data-cap="3">WIP...</button>
+        <button class="btn-capitulo" data-cap="4">WIP...</button>
+        <button class="btn-capitulo" data-cap="5">WIP...</button>
+        <button class="btn-capitulo" data-cap="6">WIP...</button>
+        <button class="btn-capitulo" data-cap="7">WIP...</button>
+        <button class="btn-capitulo" data-cap="8">WIP...</button>
+        <button class="btn-capitulo" data-cap="9">WIP...</button>
+        <button class="btn-capitulo" data-cap="10">WIP...</button>
+        <button class="btn-capitulo" data-cap="11">WIP...</button>
+        <button class="btn-capitulo" data-cap="12">WIP...</button>
+      </div>
+    </div>
+
+    <!-- LADO DERECHO: Visualizador de Texto -->
+    <div class="seccion-derecha">
+      <h1 id="titulo-pantalla" class="titulo-historia">⋅˚₊‧ ୨🕮୧ ‧₊˚ ⋅</h1>
+      <p id="texto-pantalla" class="texto-historia">Selecciona un elemento para revisar su contenido.</p>
+    </div>
+
+  </div>
+  <script>
+    // Tu base de datos de la historia (puedes agregar más capítulos aquí)
+    const historia = {
+      1: {
+        titulo: "Sincronicidad",
+        texto: `
+<p style="text-align: center; font-size: 12px;">-20 julio 2026-</p>
+<br>
+
+<p style="text-align: left;">
+Asiduo el vértigo y la sorpresa<br>
+Magia suelta, terrenal, dispersa<br>
+Las velas de ese año extintas de un solo soplido<br>
+La estrofa que hoy pareciera hablar de lo mío
+</p>
+
+<br>
+
+<p style="text-align: center;">
+El aguacero paciente a que ya estes en casa<br>
+La sonrisa incesante por cumplido al paso<br>
+Espontanea, fugaz, desinteresada<br>
+Mas amable y tierna, como sentirse amada
+</p>
+
+<br>
+
+<p style="text-align: right;">
+¿Fortuna? ¿Suerte?<br>
+Coincidencia sin precedentes<br>
+Tal vez un guiño de lo divino<br>
+Encontrarte… ¿Cómo lo defino?<br>
+</p>
+
+<br>
+
+<p style="text-align: center;">
+Cuando los ojos buscan y encuentran<br>
+Cuando el calor inunda el cuarto<br>
+Cuando la boca saborea y desea<br>
+Cuando mi cintura responde a tu tacto<br>
+Cuando la respiración de dos se mezcla<br>
+Cuando el tiempo ya no da abasto<br>
+</p>
+
+<br>
+
+<p style="text-align: left;">
+Y termino tus frases<br>
+Como adivino tus ideas<br>
+Y nuestras manos encajan<br>
+Como si fuesen gemelas<br>
+</p>
+
+<br>
+
+<p style="text-align: center;">
+Coincidencias poco habituales<br>
+Sincronicidades<br>
+
+Con suma gracia veo el regalo<br>
+Caminar contigo, tocar tus manos<br>
+
+Y es ahora lo que debió ser<br>
+Que con pureza me permito ver<br>
+</p>
+
+<br>
+
+<p style="text-align: right; font-size: 16px;">E.Paz</p>
+      `
+    },
+      2: {
+        titulo: "Dice",
+        texto: `
+<p style="text-align: center; font-size: 12px;">-07 agosto 2026-</p>
+<br>
+<p style="text-align: center;">  
+Dice lo que piensa<br>
+Dice lo que siente<br>
+Dice sin miedo<br>
+Dice lo que pocos dicen<br>
+</p>
+<br>
+<p style="text-align: center;">
+Dice cosas de memoria<br>
+Cosas que me intrigan<br>
+Las respuestas a mis preguntas…<br>
+Incluso a las no enunciadas<br>
+</p>
+<br>
+<p style="text-align: center;">
+Dice también que es un tipazo<br>
+Que nos tienen envidia<br>
+Me llama su esposita<br>
+Dice que conmigo un día no le basta<br>
+</p>
+<br>
+<p style="text-align: center;">
+Dice que quiere libertad<br>
+De irse a Bolivia<br>
+Al altiplano, me dice<br>
+Es bonito allá, me repite<br>
+</p>
+<br>
+<p style="text-align: center;">
+También dice que está cansado<br>
+Que no quiere más guerra<br>
+A veces dice cosas que me cuesta escuchar<br>
+Dice que su humor es cambiante…<br>
+</p>
+<br>
+<p style="text-align: center;">
+Hay noches que dice que descansará un rato<br>
+Y duerme hasta el otro día<br>
+Días que dice que no merece tanto<br>
+Y no entiendo por qué lo dice<br>
+</p>
+<br>
+<p style="text-align: center;">
+A veces también dice cosas extrañas<br>
+Cosas que el mundo no ha de entender<br>
+Ni hablar de lo que dice en otros idiomas<br>
+O los ruidos que en lo cotidiano deja ver<br>
+</p>
+<br>
+<p style="text-align: center;">
+Habla mucho de una sabia ave altanera<br>
+Dice tirria, almizcle y que pongan huevos<br>
+Dice rompe el suelo dale ponte lokita<br>
+Dice en la misma frase delirios y pellejo<br>
+</p>
+<br>
+<p style="text-align: center;">
+Pero entre todo lo que dice<br>
+Hay ciertas en particular<br>
+Que me derriten profundamente<br>
+Y no quisiera dejar de escuchar<br>
+</p>
+<br>
+<p style="text-align: center;">
+Cuando dice que le fascina mi mente<br>
+O que arribita me quiere<br>
+O si me mira y dice que me ama<br>
+O si dice felicidad su sonrisa al verme<br>
+</p>
+<br>
+<p style="text-align: center;">
+A veces no va en lo que dice<br>
+A veces es su entonación al declamar<br>
+El goce estruendoso en su risa<br>
+A veces la suavidad al respirar<br>
+</p>
+<br>
+<p style="text-align: center;">
+Habla de otras vidas, otros mundos<br>
+Dice que le gusto porque no le recuerdo a nadie mas<br>
+Dice que en la vida va mejor la espera…<br>
+De ir lento, con cuidado avanzar<br>
+</p>
+<br>
+<p style="text-align: center;">
+Todo esto dice y yo le oigo<br>
+Y lo que no dice también puedo escuchar<br>
+Y de poder contestar todo lo que dice<br>
+Yo le diría que es un regalo poderle amar<br>
+</p>
+
+<br>
+<p style="text-align: right; font-size: 16px;">E.Paz</p>
+    
+
+
+
+
+      `
+    },
+      3: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        4: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        5: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        6: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        7: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        8: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        9: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+        10: {
+        titulo: "☕︎",
+        texto: "en construcción..."
+      },
+    };
+
+    // Selección de elementos de la pantalla
+    const tituloPantalla = document.getElementById('titulo-pantalla');
+    const textoPantalla = document.getElementById('texto-pantalla');
+    const botones = document.querySelectorAll('.btn-capitulo');
+
+    // Escuchar los clics de cada botón de manera dinámica
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const numeroCapitulo = boton.getAttribute('data-cap');
+        
+        // Extrae la información del objeto 'historia' y reemplaza el contenido actual
+        if (historia[numeroCapitulo]) {
+          tituloPantalla.textContent = historia[numeroCapitulo].titulo;
+          textoPantalla.innerHTML = historia[numeroCapitulo].texto;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
