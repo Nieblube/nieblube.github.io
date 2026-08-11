@@ -16,7 +16,7 @@ p.base{
 }
 
 p.decorMargin{
-    font-size: 60%;
+    font-size: 100%;
     font-weight: bold;
     color: #e27db3;
     margin-top: 0px;
@@ -46,11 +46,20 @@ p.slantRelief{
 p.stickLetters{
     white-space: pre;
     line-height: 6.2px; 
-    display:block;
     font-family: "Lucida Console", Monaco, monospace;
     letter-spacing: -3px;
     color: #f6dd7a;
     }
+p.decorMargin2{
+    font-size: 75%;
+    white-space: pre;
+    line-height: 0px; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e27db3;
+    letter-spacing: 6px;
+    font-weight: bold;
+
+    }   
 
 p.buttonsText{
     color: #f6dd7a;
