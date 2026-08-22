@@ -7,8 +7,141 @@
     <meta name="description" content="Sitio Web personal">
     <meta name="keywords" content="Biografia, Registro, Diario">
     <meta name="author" content="Emilia Paz P.O.">
-</head>
 
+
+
+
+  <style>
+    /* 0. RESET DEFAULT BROWSER SPACINGS */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden; /* Bloquea el scroll general de la página */
+      box-sizing: border-box;
+      background-color: #121212; /* Color de fondo por defecto */
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    /* 1. GRID PRINCIPAL (30% Izquierda para menú, 70% Derecha para texto) */
+    .contenedor-principal {
+      display: grid;
+      grid-template-columns: 20% 80%; 
+      height: 100vh;      
+      width: 100%;
+      overflow: hidden;   
+    }
+
+    /* Sección Izquierda */
+    .seccion-izquierda {
+      background-color: transparent;
+      padding: 10px; 
+      border-right: 2px solid #f6dd7a;
+      height: 100vh;
+      overflow-y: auto; /* Permite scroll interno si agregas más de 12 botones */
+    }
+
+    /* 2. SUB-GRID DE BOTONES (Convertido a 1 sola columna estándar) */
+    .grid-botones {
+      display: grid;
+      grid-template-columns: 1fr; /* Una sola columna para formato de lista */
+      gap: 6px; /* Espacio compacto para que quepan más botones en pantalla */
+    }
+
+     /* Botones transformados en cajas de lista compactas y estándar */
+    .btn-capitulo {
+      /* Uses max() and vh units to dynamically size height based on the display */
+      height: max(35px, 6vh); 
+      padding: 0 12px; /* Left/right internal padding only */
+      font-size: 0.95rem; /* Balanced text size for tight rows */
+      background-color: rgba(246, 221, 122, 0.05); 
+      color: #f6dd7a;
+      border: 1.5px solid #f6dd7a; /* Thinner border looks cleaner at smaller scales */
+      border-radius: 4px; 
+      cursor: pointer;
+      font-weight: bold;
+      text-align: left; 
+      transition: background 0.3s, color 0.3s;
+      width: 100%; 
+      box-sizing: border-box;
+      
+      /* Vertical centering controls */
+      display: flex;
+      align-items: center; 
+      
+      /* Text truncation rules */
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+    }
+
+    .btn-capitulo:hover {
+      background-color: #e27db3;
+      color: whitesmoke;
+      border-color: #e27db3;
+    }
+
+    /* Sección Derecha */
+    .seccion-derecha {
+      padding: 30px;
+      background-color: transparent;
+      height: 100vh;      
+      overflow-y: auto;       /* This handles your main story scrollbar */
+      box-sizing: border-box; 
+      display: flex;
+      flex-direction: column;
+      position: relative;     /* Establishes a safe rendering base */
+    }
+
+    .titulo-historia {
+      font-size: 28px;
+      color: whitesmoke;
+      margin-bottom: 20px;
+      flex-shrink: 0; 
+    }
+
+
+    .texto-historia {
+      font-size: 18px;
+      line-height: 1.6;
+      color: whitesmoke;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin: 0;
+      
+      /* THE FIX: Added a massive safety bottom padding to push text up into view */
+      padding-bottom: 120px; 
+      
+      /* Allows the browser layout engine to correctly map long string nodes */
+      display: block; 
+      height: auto;
+    }
+
+    /* 3. MEDIA QUERY PARA MÓVILES (Pantallas de menos de 768px) */
+    @media (max-width: 768px) {
+      .contenedor-principal {
+        grid-template-columns: 100%; 
+        overflow-y: auto; /* Permite scroll normal en celulares */
+        height: auto;
+      }
+      .seccion-izquierda {
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #f6dd7a; 
+      }
+      .seccion-derecha {
+        height: auto; 
+      }
+      .btn-capitulo {
+        font-size: 1rem; 
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
 
 <body>
     <a href="index.html">/back\<br>\home/</a>
@@ -23,68 +156,6 @@
     <br>
 
 
-<style>
-    /* 1. GRID PRINCIPAL (Pantalla completa) */
-    .contenedor-principal {
-      display: grid;
-      /* AJUSTE DE ANCHO: Modifica estos valores para cambiar el tamaño de cada sección */
-      grid-template-columns: 40% 60%; 
-      height: 280vh;
-    }
-
-    /* Sección Izquierda */
-    .seccion-izquierda {
-      background-color: transparent;
-      padding: 5px;
-      border-right: 2px solid #f6dd7a;
-    }
-
-    /* 2. SUB-GRID DE BOTONES (Dentro de la sección izquierda) */
-    .grid-botones {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-      gap: 12px; /* Espacio entre botones */
-    }
-
-    .btn-capitulo {
-      padding: 15px 10px;
-      font-size: 32px;
-      background-color: transparent;
-      color: #f6dd7a;
-      border:#f6dd7a;
-      border-radius: 90px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.8s;
-    }
-
-    .btn-capitulo:hover {
-      background-color: #e27db3;
-    }
-
-    /* Sección Derecha (Texto de la historia) */
-    .seccion-derecha {
-      padding: 24px;
-      background-color: transparent;
-      overflow-y: auto; /* Permite scroll si el texto es muy largo */
-    }
-
-    .titulo-historia {
-      font-size: 28px;
-      color: whitesmoke;
-      margin-bottom: 20px;
-    }
-
-    .texto-historia {
-      font-size: 18px;
-      line-height: 1.6;
-      color: whitesmoke;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-  </style>
-</head>
-<body>
-
   <div class="contenedor-principal">
     
     <!-- LADO IZQUIERDO: Panel de Control -->
@@ -94,7 +165,7 @@
         <button class="btn-capitulo" data-cap="1">Sincronicidad</button>
         <button class="btn-capitulo" data-cap="2">Dice</button>
         <button class="btn-capitulo" data-cap="3">WIP...</button>
-        <button class="btn-capitulo" data-cap="4">WIP...</button><!--
+        <button class="btn-capitulo" data-cap="4">WIP...</button>
         <button class="btn-capitulo" data-cap="5">WIP...</button>
         <button class="btn-capitulo" data-cap="6">WIP...</button>
         <button class="btn-capitulo" data-cap="7">WIP...</button>
@@ -102,7 +173,7 @@
         <button class="btn-capitulo" data-cap="9">WIP...</button>
         <button class="btn-capitulo" data-cap="10">WIP...</button>
         <button class="btn-capitulo" data-cap="11">WIP...</button>
-        <button class="btn-capitulo" data-cap="12">WIP...</button>-->
+        <button class="btn-capitulo" data-cap="12">WIP...</button>
       </div>
     </div>
 
